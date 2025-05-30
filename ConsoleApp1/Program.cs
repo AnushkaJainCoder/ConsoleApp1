@@ -35,18 +35,20 @@
 
 Console.WriteLine("-----------------Welcome to the Calculator--------------------");
 Console.WriteLine();
-
 String[] op = ["+", "-", "*", "/"];
-
 Console.Write("Enter the operation you want to perform (+, -, *, /): ");
 String input_op = Console.ReadLine();
 Boolean flag = true;
-//int n;
 int ans = 0;
-
 
 while (flag == true)
 {
+    if (input_op == "#")
+    {
+        flag = false;
+        Console.WriteLine("Exiting the calculator. Goodbye!");
+        break;
+    }
     if (input_op != "+" && input_op != "-" && input_op != "*" && input_op != "/")
     {
         Console.WriteLine("Invalid operation.");
@@ -69,18 +71,17 @@ while (flag == true)
         }
         else if (input_op == "*")
         {
-            ans = Math.Abs(n * m);
+            ans = n * m;
         }
         else if (input_op == "/")
         {
             ans = Math.Abs(n / m);
         }
 
-        Console.WriteLine($"Your ans is {ans}");
-        
+        Console.WriteLine($"Your ans is {ans}");    
     }
 
-    Console.Write("Prey # to exit / Enter the operation you want to perform (+, -, *, /):");4
+    Console.Write("Prey # to exit / Enter the operation you want to perform (+, -, *, /):");
 
     input_op = Console.ReadLine();
 
