@@ -40,31 +40,41 @@ String[] op = ["+", "-", "*", "/"];
 
 Console.Write("Enter the operation you want to perform (+, -, *, /): ");
 String input_op = Console.ReadLine();
-
-Console.Write("Enter first number: ");
-int n = int.Parse(Console.ReadLine());
-
-Console.Write("Enter second number: ");
-int m = int.Parse(Console.ReadLine());
+Boolean flag = false;
+//int n;
 int ans = 0;
 
-if(input_op == "+")
+if (input_op == "+" || input_op == "-" || input_op == "*" || input_op == "/")
 {
-    ans = n + m;
+    Console.Write("Enter first number: ");
+    int n = int.Parse(Console.ReadLine());
+
+    Console.Write("Enter second number: ");
+    int m = int.Parse(Console.ReadLine());
+
+    if (input_op == "+")
+    {
+        ans = n + m;
+    }
+    else if (input_op == "-")
+    {
+        ans = Math.Abs(n - m);
+    }
+    else if (input_op == "*")
+    {
+        ans = Math.Abs(n * m);
+    }
+    else if (input_op == "/")
+    {
+        ans = Math.Abs(n / m);
+    }
+
+    Console.WriteLine($"Your ans is {ans}");
 }
-else if (input_op == "-")
-{
-    ans = Math.Abs(n - m);
-}
-else if (input_op == "*")
-{
-    ans = Math.Abs(n * m);
-}
-else 
-{
-    ans = Math.Abs(n / m);
+else {
+    Console.WriteLine("Invalid operation.");
 }
 
-Console.WriteLine($"Your ans is {ans}");
+
 
 
